@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">org.hsqldb.jdbc.JDBCDriver</property>
+		<property name="connection.url">jdbc:hsqldb:hsql://localhost:9001/hibernatedb</property>
+		<property name="connection.username">SA</property>
+		<property name="connection.password"></property>
+		<property name="connection.pool_size">1</property>
+		
+		<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+		<property name="show_sql">true</property>
+		
+		<!-- Mapping with Annotations OneToMany Unidirectional -->   
+		<!--  
+		<mapping class="ch.ne.ceg.hibernate.helloworld.annotation.onetomany.unidirectional.Stock"/>
+		<mapping class="ch.ne.ceg.hibernate.helloworld.annotation.onetomany.unidirectional.Contenu"/>
+		-->
+		
+		<!-- Maping with Annotations OneToMany Bidirectional -->
+		<!-- 
+		<mapping class="ch.ne.ceg.hibernate.helloworld.annotation.onetomany.bidirectional.Stock"/>
+		<mapping class="ch.ne.ceg.hibernate.helloworld.annotation.onetomany.bidirectional.Contenu"/>
+		 -->
+		
+		<!-- Mapping with Annotations ManyToMany -->
+		<mapping class="ch.ne.ceg.hibernate.helloworld.annotation.manytomany.Student"/>
+		<mapping class="ch.ne.ceg.hibernate.helloworld.annotation.manytomany.Lesson"/>
+		
+		<!-- Mapping in XML with external XML file -->
+		<!-- 
+		<mapping resource="hibernate/Stock.hbm.xml"/>
+		<mapping resource="hibernate/Contenu.hbm.xml"/>
+		 -->
+	</session-factory>
+</hibernate-configuration>

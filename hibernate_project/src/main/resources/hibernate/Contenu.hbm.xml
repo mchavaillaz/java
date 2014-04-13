@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="ch.ne.ceg.hibernate.helloworld.xmlconfig.Contenu" table="CONTENU">
+		<id name="contenuId" type="int">
+			<column name="CONTENU_ID" />
+			<generator class="increment" />
+		</id>
+
+		<property name="contenuName" type="string">
+			<column name="CONTENU_NAME" />
+		</property>
+
+		<property name="stockId" type="int">
+			<column name="STOCK_ID" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

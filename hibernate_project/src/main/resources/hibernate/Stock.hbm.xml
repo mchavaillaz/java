@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="ch.ne.ceg.hibernate.helloworld.xmlconfig.Stock" table="STOCK">
+		<id name="stockId" type="int">
+			<column name="STOCK_ID" />
+			<generator class="increment" />
+		</id>
+		
+		<property name="stockCode" type="string">
+			<column name="STOCK_CODE" length="10" not-null="true" />
+		</property>
+		
+		<property name="stockName" type="string">
+			<column name="STOCK_NAME" length="20" not-null="true" />
+		</property>
+		
+		<!-- CASCADE -->
+		<!-- Manage the state of the collection automatically.  -->
+		<!-- Here when a Stock is saved, the reference to his Contenu should be saved into database as well -->
+		
+		<!-- INVERSE -->
+		<!-- Is always declare in one-to-many and many-to-one relationship -->
+		<!-- If inverse=false: Stock will maintains the relationship between Stock and Contenu -->
+		<!-- If inverse=true:  Contenu is the relationship owner and Stock will NOT maintains the relationship -->
+		
+		<!-- LAZY -->
+		<!-- Controls whether the association is loaded eagerly or on demand -->
+		<set name="stockContenu" table="CONTENU" cascade="all" inverse="true" lazy="false">
+			<key column="STOCK_ID" not-null="true" />
+			<one-to-many class="ch.ne.ceg.hibernate.helloworld.xmlconfig.Contenu" />
+		</set>
+	</class>
+</hibernate-mapping>
