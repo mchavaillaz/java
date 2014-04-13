@@ -1,1 +1,3 @@
-A few Java projects and samples
+A few Java projects and samples:
+- Bachelor project
+- Hibernate project
