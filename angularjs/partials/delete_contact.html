@@ -1,0 +1,16 @@
+<div class="col-sm-4">
+	<h2>{{viewTitle}}</h2>
+	<h3>Are you sure ?</h3>
+	<div>
+		Firstname: {{contact.firstname}} <br>
+		Lastname: {{contact.lastname}} <br>
+		Address: {{contact.address}} <br>
+		Phone: {{contact.phone}} <br>
+		Email: {{contact.email}} <br>
+	</div>
+	<form name="deleteContactForm" ng-submit="submitContactForm()" novalidate>
+		<button type="submit" class="btn btn-danger">Yes</button>
+		<a class="btn btn-success" ng-href="#showAllContact">No</a>
+		<btn-edit-contact></btn-edit-contact>
+	</form>
+</div>

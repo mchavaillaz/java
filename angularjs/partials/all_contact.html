@@ -1,0 +1,31 @@
+<div class="col-md-12">
+	<h2>{{viewTitle}}</h2>
+
+	<p class="text-left">
+		Search contact: <input type="text" class="form-control" placeholder="Type here" ng-model="searchContact">
+	</p>
+	
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Address</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Edit/Delete</th>
+		</tr>
+		<tr ng-repeat="contact in contacts.data | filter:searchContact">
+			<td>{{contact.contact_id}}</td>
+			<td>{{contact.firstname}}</td>
+			<td>{{contact.lastname}}</td>
+			<td>{{contact.address}}</td>
+			<td>{{contact.phone}}</td>
+			<td>{{contact.email}}</td>
+			<td>
+				<btn-edit-contact></btn-edit-contact>
+				<btn-delete-contact></btn-delete-contact>
+			</td>
+		</tr>
+	</table>
+</div>
